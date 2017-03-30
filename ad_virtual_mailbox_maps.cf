@@ -1,0 +1,13 @@
+server_host     = ad.example.com
+server_port     = 389
+version         = 3
+bind            = yes
+start_tls       = no
+bind_dn         = vmail
+bind_pw         = iopex@123
+search_base     = dc=example,dc=com
+scope           = sub
+query_filter    = (&(objectclass=person)(userPrincipalName=%s))
+result_attribute= userPrincipalName
+result_format   = %d/%u/Maildir/
+debuglevel      = 0

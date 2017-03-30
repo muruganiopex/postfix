@@ -1,0 +1,12 @@
+server_host     = 127.0.0.1
+server_port     = 389
+version         = 3
+bind            = yes
+start_tls       = no
+bind_dn         = cn=vmail,dc=example,dc=com
+bind_pw         = HmChvPtF769UGDlPj8pT0TnuXq4fMK
+search_base     = o=domains,dc=example,dc=com
+scope           = sub
+query_filter    = (&(objectClass=mailUser)(accountStatus=active)(!(domainStatus=disabled))(enabledService=mail)(enabledService=smtp)(|(mail=%s)(&(enabledService=shadowaddress)(shadowAddress=%s))))
+result_attribute= mail
+debuglevel      = 0
